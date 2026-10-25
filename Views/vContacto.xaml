@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jtipanT3.Views.vContacto"
+             Title="vContacto">
+
+    <!-- ESTILOS IMPLÍCITOS DE LA VENTANA CONTACTOS -->
+    <ContentPage.Resources>
+        
+        <ResourceDictionary>
+
+            <!-- ESTILO PARA LOS LABEL -->
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#263238"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+
+            <!-- ESTILO PARA LAS CAJAS DE TEXTO -->
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="#263238"/>
+                <Setter Property="PlaceholderColor" Value="#999999"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="BackgroundColor" Value="#F5F7FA"/>
+            </Style>
+
+            <!-- ESTILO PARA EL PICKER -->
+            <Style TargetType="Picker">
+                <Setter Property="TextColor" Value="#263238"/>
+                <Setter Property="TitleColor" Value="#999999"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="BackgroundColor" Value="#F5F7FA"/>
+            </Style>
+
+            <!-- ESTILO PARA EL DATEPICKER -->
+            <Style TargetType="DatePicker">
+                <Setter Property="TextColor" Value="#263238"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="BackgroundColor" Value="#F5F7FA"/>
+            </Style>
+
+            <!-- ESTILO PARA EL BOTÓN -->
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#123D67"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="CornerRadius" Value="8"/>
+                <Setter Property="HeightRequest" Value="50"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="15">
+
+            <!-- TÍTULO DEL FORMULARIO -->
+            <Label 
+            Text="REGISTRO DE CONTACTOS"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="24"
+            FontAttributes="Bold"
+            TextColor="#123D67" />
+
+            <!-- IMAGEN DEL FORMULARIO -->
+            <Image
+                Source="contacto.png"
+                HeightRequest="120"
+                WidthRequest="120"
+                Aspect="AspectFit"
+                HorizontalOptions="Center"/>
+
+            <!-- FORMULARIO CON GRID -->
+            <Grid
+                ColumnDefinitions="120,*"
+                RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                RowSpacing="15"
+                ColumnSpacing="10">
+
+                <!-- TIPO DE IDENTIFICACIÓN -->
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="Identificación:"/>
+
+                <Picker
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="pkIdentificacion"
+                    Title="Seleccione"
+                    SelectedIndexChanged="pkIdentificacion_SelectedIndexChanged">
+
+                    <Picker.Items>
+                        <x:String>CI</x:String>
+                        <x:String>RUC</x:String>
+                        <x:String>Pasaporte</x:String>
+                    </Picker.Items>
+
+                </Picker>
+
+                <!-- NÚMERO DE IDENTIFICACIÓN -->
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="Número:"/>
+
+                <Entry
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    x:Name="txtIdentificacion"
+                    Placeholder="Ingrese identificación"/>
+
+                <!-- NOMBRES -->
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Text="Nombres:"/>
+
+                <Entry
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    x:Name="txtNombres"
+                    Placeholder="Ingrese nombres"/>
+
+                <!-- APELLIDOS -->
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Text="Apellidos:"/>
+
+                <Entry
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    x:Name="txtApellidos"
+                    Placeholder="Ingrese apellidos"/>
+
+                <!-- FECHA -->
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Text="Fecha:"/>
+
+                <DatePicker
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    x:Name="dtFecha"
+                    Format="dd/MM/yyyy"/>
+
+                <!-- CORREO -->
+                <Label
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Text="Correo:"/>
+
+                <Entry
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    x:Name="txtCorreo"
+                    Placeholder="Ingrese correo"
+                    Keyboard="Email"/>
+
+                <!-- SALARIO -->
+                <Label
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Text="Salario:"/>
+
+                <Entry
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    x:Name="txtSalario"
+                    Placeholder="Ingrese salario"
+                    Keyboard="Numeric"/>
+
+            </Grid>
+
+            <!-- BOTÓN FUERA DEL GRID -->
+            <Button
+                x:Name="btnContinuar"
+                Text="REGISTRAR"
+                Margin="0,20,0,0"
+                Clicked="btnContinuar_Clicked"/>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+    
+</ContentPage>

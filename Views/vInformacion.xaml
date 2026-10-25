@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jtipanT3.Views.vInformacion"
+             Title="vInformacion">
+
+    <!-- ESTILOS EXPLÍCITOS -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <!-- ESTILO PARA LOS TÍTULOS DE LOS CAMPOS -->
+            <Style x:Key="EstiloEtiqueta"
+                   TargetType="Label">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="TextColor" Value="#263238"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+
+            <!-- ESTILO PARA LOS VALORES -->
+            <Style x:Key="EstiloValor"
+                   TargetType="Label">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="TextColor" Value="#455A64"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+
+            <!-- ESTILO PARA EL APORTE AL IESS -->
+            <Style x:Key="EstiloIESS"
+                   TargetType="Label">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="#123D67"/>
+            </Style>
+
+            <!-- ESTILO PARA EL BOTÓN -->
+            <Style x:Key="EstiloBoton"
+                   TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#123D67"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="CornerRadius" Value="8"/>
+                <Setter Property="HeightRequest" Value="50"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="15">
+            
+            <!-- TÍTULO -->
+            <Label 
+            Text="INFORMACIÓN DEL CONTACTO"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="24"
+            FontAttributes="Bold"
+            TextColor="#123D67"
+            HorizontalTextAlignment="Center" />
+
+            <!-- IMAGEN -->
+            <Image
+                Source="resumen.png"
+                HeightRequest="120"
+                WidthRequest="120"
+                Aspect="AspectFit"
+                HorizontalOptions="Center"/>
+
+            <!-- INFORMACIÓN DEL CONTACTO -->
+            <Grid
+                ColumnDefinitions="130,*"
+                RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                RowSpacing="18"
+                ColumnSpacing="10">
+
+                <!-- TIPO DE IDENTIFICACIÓN -->
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="Tipo:"
+                    Style="{StaticResource EstiloEtiqueta}"/>
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="lblTipo"
+                    Style="{StaticResource EstiloValor}"/>
+
+                <!-- IDENTIFICACIÓN -->
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="Identificación:"
+                    Style="{StaticResource EstiloEtiqueta}"/>
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    x:Name="lblIdentificacion"
+                    Style="{StaticResource EstiloValor}"/>
+
+                <!-- NOMBRES -->
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Text="Nombres:"
+                    Style="{StaticResource EstiloEtiqueta}"/>
+
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    x:Name="lblNombres"
+                    Style="{StaticResource EstiloValor}"/>
+
+                <!-- APELLIDOS -->
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Text="Apellidos:"
+                    Style="{StaticResource EstiloEtiqueta}"/>
+
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    x:Name="lblApellidos"
+                    Style="{StaticResource EstiloValor}"/>
+
+                <!-- FECHA -->
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Text="Fecha:"
+                    Style="{StaticResource EstiloEtiqueta}"/>
+
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    x:Name="lblFecha"
+                    Style="{StaticResource EstiloValor}"/>
+
+                <!-- CORREO -->
+                <Label
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Text="Correo:"
+                    Style="{StaticResource EstiloEtiqueta}"/>
+
+                <Label
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    x:Name="lblCorreo"
+                    LineBreakMode="WordWrap"
+                    Style="{StaticResource EstiloValor}"/>
+
+                <!-- SALARIO -->
+                <Label
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Text="Salario:"
+                    Style="{StaticResource EstiloEtiqueta}"/>
+
+                <Label
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    x:Name="lblSalario"
+                    Style="{StaticResource EstiloValor}"/>
+
+                <!-- APORTE IESS -->
+                <Label
+                    Grid.Row="7"
+                    Grid.Column="0"
+                    Text="Aporte IESS:"
+                    Style="{StaticResource EstiloEtiqueta}"/>
+
+                <Label
+                    Grid.Row="7"
+                    Grid.Column="1"
+                    x:Name="lblIESS"
+                    Style="{StaticResource EstiloIESS}"/>
+
+            </Grid>
+
+            <!-- BOTÓN EXPORTAR -->
+            <Button
+                x:Name="btnExportar"
+                Text="EXPORTAR INFORMACIÓN"
+                Style="{StaticResource EstiloBoton}"
+                Margin="0,20,0,0"
+                Clicked="btnExportar_Clicked"/>
+            
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+
+</ContentPage>
